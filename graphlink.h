@@ -41,7 +41,9 @@ template<typename K , typename W>
 struct VertexForHash{
     K key;//插入哈希映射中的关键码
     int data;//顶点整数值
-    DblNode<K , Vertex<K , W>> *pos;
+    DblNode<K , Vertex<K , W>> *pos;//指向顶点的指针
+    VertexForHash<K , W>(K key);
+
 
 };
 
