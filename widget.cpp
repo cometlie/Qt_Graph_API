@@ -6,6 +6,8 @@ Widget::Widget(QWidget *parent)
     , ui(new Ui::Widget)
 {
     ui->setupUi(this);
+    //第一次修改
+    QString s="6";
 }
 
 Widget::~Widget()
