@@ -42,7 +42,7 @@ struct VertexForHash{
     K key;//插入哈希映射中的关键码
     int data;//顶点整数值
     DblNode<K , Vertex<K , W>> *pos;//指向顶点的指针
-    VertexForHash<K , W>(K key);
+    VertexForHash<K , W>(K key);//构造函数
 
 
 };
