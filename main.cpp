@@ -50,7 +50,7 @@ int main(int argc, char *argv[])
     ptest.first = "北京";
     ptest.second = 5;
     ptest2.first = "北方";
-    ptest2.second = 0;
+    ptest2.second = 2;
     m.Insert(ptest);
     m.Insert(ptest2);
     std::string test = "北京";
@@ -59,7 +59,7 @@ int main(int argc, char *argv[])
     qDebug()<<m.getValue(test);
     qDebug()<<m.getValue(test2);
     m.Remove(test2);
-//    qDebug()<<m.getValue(test2);
+    qDebug()<<m.getValue(test2);
     return a.exec();
 }
 
