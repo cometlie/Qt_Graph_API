@@ -99,9 +99,9 @@ bool ExpandableLinkedHashTable<K,E>::Insert(  K& key,  E& e){
 template <class K, class E>
 int ExpandableLinkedHashTable<K,E>::Remove(  K& key){
     int bucket=getBucket(key);
-    int i=HashTable[bucket]->Size();
-    HashTable[bucket]->Clear();
-    return i;
+    if(HashTable[bucket]->Remove(key)){
+        return 1;
+    }
 }
 
 template <class K, class E>
