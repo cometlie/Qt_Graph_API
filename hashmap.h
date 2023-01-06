@@ -18,7 +18,7 @@ public:
     set<K> keySet();
     bool containsKey(  K& key);
     void Insert(pair<K,V>  k_v);
-    V& Remove(  K& key);
+    V& Remove(  K &key);
     V& Remove(  K& key,  V& val);
     void Clear();
     int getSize();
@@ -74,7 +74,8 @@ V& HashMap<K,V>::Remove(  K& key){
         map->Remove(key);
         return  val;
     }
-    return V();
+    V *t = NULL;
+    return *t;
 }
 
 template<class K,class V>

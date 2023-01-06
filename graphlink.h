@@ -35,21 +35,39 @@ struct Vertex{
         : data(NULL) , degree(0){}
     Vertex<K , W>(int dat)
         : data(dat) , degree(0){}
+    Vertex<K , W> & operator =(const Vertex<K , W> &v)//重载赋值运算符
+    {
+        this->data = v.data;
+        this->degree = v.degree;
+        return *this;
+    }
 };
 
 template<typename K , typename W>
 struct VertexForHash{
     K key;//插入哈希映射中的关键码
     int data;//顶点整数值
-    DblNode<K , Vertex<K , W>> *pos;//指向顶点的指针
-    VertexForHash<K , W>(K key);//构造函数
-
+    DblNode<K , Vertex<K , W>> *pForGV;//指向图中顶点的指针
+    VertexForHash<K , W>(K ke , DblNode<K , Vertex<K , W>> *p = NULL)//构造函数
+        :key(ke) , pForGV(p){}
+    VertexForHash<K , W>(K ke , int dat , DblNode<K , Vertex<K , W>> *p = NULL)
+        :key(ke) , data(dat), pForGV(p){}
 
 };
 
 template<typename K , typename W>
 struct EdgeForHash{
-
+    K key; //插入哈希映射中的关键码
+    int v[2]; //连接的顶点对
+    DblNode<K , Edge<K , W>> *pForGE;//指向图中边的指针
+    EdgeForHash<K , W>(K ke , DblNode<K , Edge<K , W>> *p = NULL)//构造函数
+        :key(ke) , pForGE(p){}
+    EdgeForHash<K , W>(K ke , Vertex<K,W> v1 , Vertex<K ,W> v2 , DblNode<K , Edge<K , W>> *p = NULL)//构造函数
+        :key(ke) , pForGE(p)
+    {
+        v[0] = v1;
+        v[1] = v2;
+    }
 };
 
 
@@ -86,5 +104,11 @@ private:
     DblNode<K , W> isVertex(K key);
 
 };
+
+template<typename K, typename W>
+WUSGraph<K, W>::WUSGraph(int v)
+{
+
+}
 
 #endif // GRAPHLINK_H

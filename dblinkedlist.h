@@ -63,7 +63,7 @@ DblNode<K , E> *DbLinkedList<K , E>::Search(K key)//根据关键码查找
     DblNode<K , E> *p = first->rLink;
     if(p == first)
         return NULL;
-    while (p->key != key) {
+    while (p->key != key && p != first) {
         p = p->rLink;
     }
     return p;

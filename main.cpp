@@ -49,15 +49,17 @@ int main(int argc, char *argv[])
     std::pair<std::string , int> ptest2;
     ptest.first = "北京";
     ptest.second = 5;
-    ptest2.first = "南方";
+    ptest2.first = "北方";
     ptest2.second = 0;
     m.Insert(ptest);
     m.Insert(ptest2);
     std::string test = "北京";
-    std::string test2 = "南方";
+    std::string test2 = "北方";
+
     qDebug()<<m.getValue(test);
     qDebug()<<m.getValue(test2);
-
+    m.Remove(test2);
+//    qDebug()<<m.getValue(test2);
     return a.exec();
 }
 
